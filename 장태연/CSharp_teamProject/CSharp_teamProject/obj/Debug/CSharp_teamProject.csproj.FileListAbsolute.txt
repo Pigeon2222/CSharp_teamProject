@@ -1,0 +1,12 @@
+D:\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.exe.config
+D:\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.exe
+D:\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.pdb
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.AssemblyReference.cache
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.SuggestedBindingRedirects.cache
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.Form1.resources
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.Properties.Resources.resources
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.GenerateResource.cache
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.CoreCompileInputs.cache
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.exe
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.pdb
+D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.LoginSuccess.resources
