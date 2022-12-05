@@ -1,0 +1,14 @@
+D:\Weather\Weather\Weather\bin\Debug\Weather.exe.config
+D:\Weather\Weather\Weather\bin\Debug\Weather.exe
+D:\Weather\Weather\Weather\bin\Debug\Weather.pdb
+D:\Weather\Weather\Weather\obj\Debug\Weather.csproj.AssemblyReference.cache
+D:\Weather\Weather\Weather\obj\Debug\Weather.csproj.SuggestedBindingRedirects.cache
+D:\Weather\Weather\Weather\obj\Debug\Weather.Form1.resources
+D:\Weather\Weather\Weather\obj\Debug\Weather.Properties.Resources.resources
+D:\Weather\Weather\Weather\obj\Debug\Weather.csproj.GenerateResource.cache
+D:\Weather\Weather\Weather\obj\Debug\Weather.csproj.CoreCompileInputs.cache
+D:\Weather\Weather\Weather\obj\Debug\Weather.exe
+D:\Weather\Weather\Weather\obj\Debug\Weather.pdb
+D:\Weather\Weather\Weather\bin\Debug\Newtonsoft.Json.dll
+D:\Weather\Weather\Weather\bin\Debug\Newtonsoft.Json.xml
+D:\Weather\Weather\Weather\obj\Debug\Weather.csproj.CopyComplete
