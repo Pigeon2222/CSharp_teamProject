@@ -19,8 +19,7 @@ namespace Weather
 {
     public partial class Form1 : Form
     {
-        //위도경도 적지않았을때 에러창 띄우기.
-        //lastday  if 조건문에서 cw한번 띄워보기 
+        //버튼 추가만 시키면 될듯.
         
         public string api_key = "c02b275b3821812edd753f1fe03f1d18";
 
@@ -61,6 +60,11 @@ namespace Weather
 
         private void button2_Click(object sender, EventArgs e) {
            
+            if(weather_textBox1.Text == "" || weather_textBox2.Text =="")
+            {
+                MessageBox.Show("위도, 경도를 적어주세요");
+            } else { 
+
             using (WebClient wc = new WebClient())
                 {
                     
@@ -97,136 +101,144 @@ namespace Weather
 
                 }
             }
-
+        }
         private void button3_Click(object sender, EventArgs e){
-  
-        
-        //api는 있으나 시간마다 있어서 데이터 가공이 필요함..
-        //json 줄이 길때 크롬 json viewer 편함
-        double.TryParse(weather_textBox1.Text, out lat2);
-        double.TryParse(weather_textBox2.Text, out lon2);
 
-        string myuri = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat2}&lon={lon2}&appid=c02b275b3821812edd753f1fe03f1d18";
-        using (WebClient wc = new WebClient())
-        {
-            var json = wc.DownloadString(myuri);
-            var jArray = JObject.Parse(json);
-
-            var jArray2 = JArray.Parse(jArray["list"].ToString());
-
-            //현재 날짜와 시간을 가져온다 데이터가 3시간마다있으니깐..주간은
-            //12시기준으로 1개만 가져오자
-            //현재 날짜
-
-
-            DateTime nowDate = DateTime.Now;
-            string Year = nowDate.Year.ToString();
-            string Month = nowDate.Month.ToString();
-            string Day = nowDate.Day.ToString();
-            string newYear = Year;
-            string newMonth = Month;
-            string nowDateTime = " 12:00:00"; //고정시간
-
-
-
-
-            //현재날짜 1자리수면 0붙여서 가져오는거 까지 했음.
-            //그리고 1씩증가하면서 날짜가 제대로 나오는지 확인해야함
-
-            string date = Year + "-" + Month + "-" + Day + "" + nowDateTime;
-
-            int dateIndex = 0; //인덱스 만들기
-
-            foreach (var item in jArray2)
+            if (weather_textBox1.Text == "" || weather_textBox2.Text == "")
             {
-                dateIndex++;
+                MessageBox.Show("위도, 경도를 적어주세요");
             }
-
-            //0~40 모든데이터를 하나씩 접근한다
-            //현재날짜 ex / 5일에 12시를 하나 찾는다.
-            //찾았다면 6일 
-            //찾았다면 7일 
-            //~~10일 
-        
-            int lastDay = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); //오늘 달의 마지막날이 몇일인지
-
-            for (int i=0; i<dateIndex; i++)
+            else
             {
-                    //주의할점은 year, month 가 바뀔수 있음.
-                    
-                    if (int.Parse(Day) > lastDay)
-                    {
-                        Day = 1+"";
-                        newMonth = (int.Parse(Month) + 1).ToString();
-                    }
-                    if (int.Parse(newMonth) > 12)
-                    {
-                        newMonth = 1 + "";
-                        newYear = (int.Parse(Year) + 1).ToString();
-                    }
-                   
 
-                //한자리수앞에 0붙이기
-                if (int.Parse(Day) < 10)
+                //api는 있으나 시간마다 있어서 데이터 가공이 필요함..
+                //json 줄이 길때 크롬 json viewer 편함
+                double.TryParse(weather_textBox1.Text, out lat2);
+                double.TryParse(weather_textBox2.Text, out lon2);
+
+                string myuri = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat2}&lon={lon2}&appid=c02b275b3821812edd753f1fe03f1d18";
+                using (WebClient wc = new WebClient())
                 {
-                    Day = string.Format("{0:D2}", int.Parse(Day));
-                }
-                if (int.Parse(newMonth) < 10)
-                {
-                    newMonth = string.Format("{0:D2}", int.Parse(newMonth));
-                }
+                    var json = wc.DownloadString(myuri);
+                    var jArray = JObject.Parse(json);
+
+                    var jArray2 = JArray.Parse(jArray["list"].ToString());
+
+                    //현재 날짜와 시간을 가져온다 데이터가 3시간마다있으니깐..주간은
+                    //12시기준으로 1개만 가져오자
+                    //현재 날짜
 
 
+                    DateTime nowDate = DateTime.Now;
+                    string Year = nowDate.Year.ToString();
+                    string Month = nowDate.Month.ToString();
+                    string Day = nowDate.Day.ToString();
+                    string newYear = Year;
+                    string newMonth = Month;
+                    string nowDateTime = " 12:00:00"; //고정시간
 
-                date = newYear + "-" + newMonth + "-" + Day + "" + nowDateTime;
 
-                    //만약 월이나 년도가 바뀌었으면 해당 월의 lastDay를 재정의
-                    if (Year != newYear || Month != newMonth)
+                    weather_richTextBox1.Text = jArray["city"]["name"].ToString() + "의 정보\r\n"+"\r\n";
+
+                    //현재날짜 1자리수면 0붙여서 가져오는거 까지 했음.
+                    //그리고 1씩증가하면서 날짜가 제대로 나오는지 확인해야함
+
+                    string date = Year + "-" + Month + "-" + Day + "" + nowDateTime;
+
+                    int dateIndex = 0; //인덱스 만들기
+
+                    foreach (var item in jArray2)
                     {
-                        lastDay = DateTime.DaysInMonth(int.Parse(newYear), int.Parse(newMonth)); //lastday를 해당 월로 
-                        Year = newYear;
-                        Month = newMonth;
+                        dateIndex++;
                     }
 
+                    //0~40 모든데이터를 하나씩 접근한다
+                    //현재날짜 ex / 5일에 12시를 하나 찾는다.
+                    //찾았다면 6일 
+                    //찾았다면 7일 
+                    //~~10일 
 
-                    //현재날짜 Day+1만큼 5번 반복하면서 12시기준의 날씨를 가져온다.
-                    //포문안에서 이프문에 충족할때 +1하도록 했음 12시기준이라 하루가 안나올수도있다
+                    int lastDay = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); //오늘 달의 마지막날이 몇일인지
 
+                    for (int i = 0; i < dateIndex; i++)
+                    {
+                        //주의할점은 year, month 가 바뀔수 있음.
 
-                    if (jArray2[i]["dt_txt"].ToString() == date)
-                {
-
-                    string o = jArray2[i]["main"]["temp"].ToString();
-                    //200~
-                    double apitemp;
-                    double diftemp = 273.15;
-                    double.TryParse(o, out apitemp);
-                    double dtemp = apitemp - diftemp;
-                    string temp = Math.Floor(dtemp).ToString();
-                    string Sweather = "";
-
-                    if (jArray2[i]["weather"][0]["main"].ToString() == ("Thunderstorm"))
-                        Sweather = "번개";
-                    else if (jArray2[i]["weather"][0]["main"].ToString() == ("Drizzle"))
-                        Sweather = "이슬비";
-                    else if (jArray2[i]["weather"][0]["main"].ToString() == ("Rain"))
-                        Sweather = "비";
-                    else if (jArray2[i]["weather"][0]["main"].ToString() == ("Snow"))
-                        Sweather = "눈";
-                    else if (jArray2[i]["weather"][0]["main"].ToString() == ("Clear"))
-                        Sweather = "맑음";
-                    else if (jArray2[i]["weather"][0]["main"].ToString() == ("Clouds"))
-                        Sweather = "흐림";
-
-                    weather_richTextBox1.Text += "날짜 : " + jArray2[i]["dt_txt"].ToString() + "\r\n" + "날씨 : " + Sweather + "\r\n" + "온도 : " + temp + "\r\n" + "\r\n";
-                    
-                    Day = (int.Parse(Day) + 1).ToString();
-                  }
+                        if (int.Parse(Day) > lastDay)
+                        {
+                            Day = 1 + "";
+                            newMonth = (int.Parse(Month) + 1).ToString();
+                        }
+                        if (int.Parse(newMonth) > 12)
+                        {
+                            newMonth = 1 + "";
+                            newYear = (int.Parse(Year) + 1).ToString();
+                        }
 
 
-              }//for
+                        //한자리수앞에 0붙이기
+                        if (int.Parse(Day) < 10)
+                        {
+                            Day = string.Format("{0:D2}", int.Parse(Day));
+                        }
+                        if (int.Parse(newMonth) < 10)
+                        {
+                            newMonth = string.Format("{0:D2}", int.Parse(newMonth));
+                        }
 
-            } //using
+
+
+                        date = newYear + "-" + newMonth + "-" + Day + "" + nowDateTime;
+
+                        //만약 월이나 년도가 바뀌었으면 해당 월의 lastDay를 재정의
+                        if (Year != newYear || Month != newMonth)
+                        {
+                            
+                            lastDay = DateTime.DaysInMonth(int.Parse(newYear), int.Parse(newMonth)); //lastday를 해당 월로 
+                            Year = newYear;
+                            Month = newMonth;
+                        }
+
+
+                        //현재날짜 Day+1만큼 5번 반복하면서 12시기준의 날씨를 가져온다.
+                        //포문안에서 이프문에 충족할때 +1하도록 했음 12시기준이라 하루가 안나올수도있다
+
+
+                        if (jArray2[i]["dt_txt"].ToString() == date)
+                        {
+
+                            string o = jArray2[i]["main"]["temp"].ToString();
+                            //200~
+                            double apitemp;
+                            double diftemp = 273.15;
+                            double.TryParse(o, out apitemp);
+                            double dtemp = apitemp - diftemp;
+                            string temp = Math.Floor(dtemp).ToString();
+                            string Sweather = "";
+
+                            if (jArray2[i]["weather"][0]["main"].ToString() == ("Thunderstorm"))
+                                Sweather = "번개";
+                            else if (jArray2[i]["weather"][0]["main"].ToString() == ("Drizzle"))
+                                Sweather = "이슬비";
+                            else if (jArray2[i]["weather"][0]["main"].ToString() == ("Rain"))
+                                Sweather = "비";
+                            else if (jArray2[i]["weather"][0]["main"].ToString() == ("Snow"))
+                                Sweather = "눈";
+                            else if (jArray2[i]["weather"][0]["main"].ToString() == ("Clear"))
+                                Sweather = "맑음";
+                            else if (jArray2[i]["weather"][0]["main"].ToString() == ("Clouds"))
+                                Sweather = "흐림";
+                            
+                            weather_richTextBox1.Text += "날짜 : " + jArray2[i]["dt_txt"].ToString() + "\r\n" + "날씨 : " + Sweather + "\r\n" + "온도 : " + temp + "\r\n" + "\r\n";
+
+                            Day = (int.Parse(Day) + 1).ToString();
+                        }
+
+
+                    }//for
+
+                } //using
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

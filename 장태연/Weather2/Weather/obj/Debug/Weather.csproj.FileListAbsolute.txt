@@ -40,3 +40,17 @@ D:\Weather\Weather\obj\Debug\Weather.csproj.CoreCompileInputs.cache
 D:\Weather\Weather\obj\Debug\Weather.csproj.CopyComplete
 D:\Weather\Weather\obj\Debug\Weather.exe
 D:\Weather\Weather\obj\Debug\Weather.pdb
+D:\Weather2\Weather\bin\Debug\Weather.exe.config
+D:\Weather2\Weather\bin\Debug\Weather.exe
+D:\Weather2\Weather\bin\Debug\Weather.pdb
+D:\Weather2\Weather\bin\Debug\Newtonsoft.Json.dll
+D:\Weather2\Weather\bin\Debug\Newtonsoft.Json.xml
+D:\Weather2\Weather\obj\Debug\Weather.csproj.AssemblyReference.cache
+D:\Weather2\Weather\obj\Debug\Weather.csproj.SuggestedBindingRedirects.cache
+D:\Weather2\Weather\obj\Debug\Weather.Form1.resources
+D:\Weather2\Weather\obj\Debug\Weather.Properties.Resources.resources
+D:\Weather2\Weather\obj\Debug\Weather.csproj.GenerateResource.cache
+D:\Weather2\Weather\obj\Debug\Weather.csproj.CoreCompileInputs.cache
+D:\Weather2\Weather\obj\Debug\Weather.csproj.CopyComplete
+D:\Weather2\Weather\obj\Debug\Weather.exe
+D:\Weather2\Weather\obj\Debug\Weather.pdb
