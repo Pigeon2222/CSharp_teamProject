@@ -1,0 +1,38 @@
+for (int i = 0; i < 300; i++)
+            {
+                //주의할점은 year, month 가 바뀔수 있음.
+             
+                if (int.Parse(Day) > lastDay)
+                {
+                    Day = 1 + "";
+
+                     newMonth = (int.Parse(Month) + 1).ToString();
+                     
+                  
+                }
+                if (int.Parse(newMonth) > 12)
+                {       
+                     newMonth = 1 + "";
+                     newMonth = string.Format("{0:D2}", int.Parse(newMonth));
+                     newYear = (int.Parse(Year) + 1).ToString();
+                }
+
+                
+                if (int.Parse(Day) < 10)
+                {
+                    Day = string.Format("{0:D2}", int.Parse(Day));
+                }
+
+                date = newYear + "-" + newMonth + "-" + Day;
+
+                //콘솔을 출력할때 마지막 if로 month나 year가 바뀌었다면 last day를 재정의 하면 될것같다.
+                if(Year != newYear || Month != newMonth)
+                {
+                    lastDay = DateTime.DaysInMonth(int.Parse(newYear), int.Parse(newMonth)); //lastday를 해당 월로 
+                    Year = newYear;
+                    Month = newMonth;
+                }
+                
+                
+                Day = (int.Parse(Day) + 1).ToString();
+            }
