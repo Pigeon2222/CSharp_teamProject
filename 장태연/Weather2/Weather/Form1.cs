@@ -84,6 +84,8 @@ namespace Weather
                     string temp = Math.Floor(dtemp).ToString();
                     string Sweather = "";
 
+
+
                     if (jArray["weather"][0]["main"].ToString() == ("Thunderstorm"))
                         Sweather = "번개";
                     else if (jArray["weather"][0]["main"].ToString() == ("Drizzle"))
@@ -110,6 +112,7 @@ namespace Weather
             }
             else
             {
+               
 
                 //api는 있으나 시간마다 있어서 데이터 가공이 필요함..
                 //json 줄이 길때 크롬 json viewer 편함
@@ -123,7 +126,7 @@ namespace Weather
                     var jArray = JObject.Parse(json);
 
                     var jArray2 = JArray.Parse(jArray["list"].ToString());
-
+                    weather_richTextBox1.Text = jArray["city"]["name"].ToString() + "의 정보\r\n" + "\r\n";
                     //현재 날짜와 시간을 가져온다 데이터가 3시간마다있으니깐..주간은
                     //12시기준으로 1개만 가져오자
                     //현재 날짜
@@ -135,16 +138,52 @@ namespace Weather
                     string Day = nowDate.Day.ToString();
                     string newYear = Year;
                     string newMonth = Month;
-                    string nowDateTime = " 12:00:00"; //고정시간
+                    int nowHour = nowDate.Hour;
+                    string nowDateTime = "";
 
+                    //" 12:00:00"; 
+                    //현재시간에서  03 06 09 12 15 18 21 00 시에서 가까운걸 선택해야할것같음.
+                   
+                    //if문이 너무 많이 사용된다 ㅠ
+                    if (nowHour >=01 && nowHour < 03)
+                    {
+                        nowDateTime = " 00:00:00";
 
-                    weather_richTextBox1.Text = jArray["city"]["name"].ToString() + "의 정보\r\n"+"\r\n";
-
+                    } else if(nowHour > 02 && nowHour < 06)
+                    {
+                      
+                        nowDateTime = " 03:00:00";
+                    }
+                    else if (nowHour > 05 && nowHour < 09)
+                    {
+                        nowDateTime = " 06:00:00";
+                    }
+                    else if (nowHour > 08 && nowHour < 12)
+                    {
+                        nowDateTime = " 09:00:00";
+                    }
+                    else if (nowHour > 11 && nowHour < 15)
+                    {
+                        nowDateTime = " 12:00:00";
+                    }
+                    else if (nowHour > 14 && nowHour < 18)
+                    {
+                        nowDateTime = " 15:00:00";
+                    }
+                    else if (nowHour > 17 && nowHour < 21)
+                    {
+                        nowDateTime = " 18:00:00";
+                    }
+                    else if (nowHour > 20 && nowHour <=24)
+                    {
+                        nowDateTime = " 21:00:00";
+                    }
+                    
                     //현재날짜 1자리수면 0붙여서 가져오는거 까지 했음.
                     //그리고 1씩증가하면서 날짜가 제대로 나오는지 확인해야함
 
                     string date = Year + "-" + Month + "-" + Day + "" + nowDateTime;
-
+                   
                     int dateIndex = 0; //인덱스 만들기
 
                     foreach (var item in jArray2)
@@ -159,6 +198,7 @@ namespace Weather
                     //~~10일 
 
                     int lastDay = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); //오늘 달의 마지막날이 몇일인지
+                  
 
                     for (int i = 0; i < dateIndex; i++)
                     {
@@ -193,7 +233,7 @@ namespace Weather
                         //만약 월이나 년도가 바뀌었으면 해당 월의 lastDay를 재정의
                         if (Year != newYear || Month != newMonth)
                         {
-                            
+                              
                             lastDay = DateTime.DaysInMonth(int.Parse(newYear), int.Parse(newMonth)); //lastday를 해당 월로 
                             Year = newYear;
                             Month = newMonth;
@@ -202,11 +242,11 @@ namespace Weather
 
                         //현재날짜 Day+1만큼 5번 반복하면서 12시기준의 날씨를 가져온다.
                         //포문안에서 이프문에 충족할때 +1하도록 했음 12시기준이라 하루가 안나올수도있다
-
+                       
 
                         if (jArray2[i]["dt_txt"].ToString() == date)
                         {
-
+                            
                             string o = jArray2[i]["main"]["temp"].ToString();
                             //200~
                             double apitemp;
@@ -229,7 +269,8 @@ namespace Weather
                             else if (jArray2[i]["weather"][0]["main"].ToString() == ("Clouds"))
                                 Sweather = "흐림";
                             
-                            weather_richTextBox1.Text += "날짜 : " + jArray2[i]["dt_txt"].ToString() + "\r\n" + "날씨 : " + Sweather + "\r\n" + "온도 : " + temp + "\r\n" + "\r\n";
+                            weather_richTextBox1.Text += "날짜 : " + jArray2[i]["dt_txt"].ToString().Split(' ')[0] + "\r\n" + "날씨 : " + Sweather + "\r\n" + "온도 : " + temp + "\r\n" + "\r\n";
+                            //"날짜 : " + jArray2[i]["dt_txt"].ToString() + "\r\n" + "날씨 : " + Sweather + "\r\n" + "온도 : " + temp + "\r\n" + "\r\n";
 
                             Day = (int.Parse(Day) + 1).ToString();
                         }
