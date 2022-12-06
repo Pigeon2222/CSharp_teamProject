@@ -126,13 +126,14 @@ namespace Weather
                     var jArray = JObject.Parse(json);
 
                     var jArray2 = JArray.Parse(jArray["list"].ToString());
-                    weather_richTextBox1.Text = jArray["city"]["name"].ToString() + "의 정보\r\n" + "\r\n";
+                   
                     //현재 날짜와 시간을 가져온다 데이터가 3시간마다있으니깐..주간은
                     //12시기준으로 1개만 가져오자
                     //현재 날짜
 
 
                     DateTime nowDate = DateTime.Now;
+                    
                     string Year = nowDate.Year.ToString();
                     string Month = nowDate.Month.ToString();
                     string Day = nowDate.Day.ToString();
@@ -183,7 +184,7 @@ namespace Weather
                     //그리고 1씩증가하면서 날짜가 제대로 나오는지 확인해야함
 
                     string date = Year + "-" + Month + "-" + Day + "" + nowDateTime;
-                   
+                    weather_richTextBox1.Text = jArray["city"]["name"].ToString() + "의 날씨 "+nowDateTime+"기준"+"\r\n" + "\r\n";
                     int dateIndex = 0; //인덱스 만들기
 
                     foreach (var item in jArray2)
@@ -241,7 +242,7 @@ namespace Weather
 
 
                         //현재날짜 Day+1만큼 5번 반복하면서 12시기준의 날씨를 가져온다.
-                        //포문안에서 이프문에 충족할때 +1하도록 했음 12시기준이라 하루가 안나올수도있다
+                        //포문안에서 이프문에 충족할때 +1하도록 했음 
                        
 
                         if (jArray2[i]["dt_txt"].ToString() == date)
