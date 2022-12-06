@@ -97,7 +97,7 @@ namespace Weather
                     else if (jArray["weather"][0]["main"].ToString() == ("Clear"))
                         Sweather = "맑음";
                     else if (jArray["weather"][0]["main"].ToString() == ("Clouds"))
-                        Sweather = "구름";
+                        Sweather = "흐림";
 
                     weather_richTextBox1.Text = $"{name}의 정보\r\n"+$"위도{lat2}, 경도{lon2}\r\n" + "날씨 : " + Sweather + "\r\n"+ "온도 : " + temp + "\r\n"+ "\r\n";
 
@@ -288,18 +288,82 @@ namespace Weather
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            findlocation("pohang");
-        }
+        
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            findlocation("daegu");
+       
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            findlocation("Seoul");
         }
 
        
+
+       
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            findlocation("Changwon"); 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            findlocation("Jeonju");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            findlocation("Daegu");
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            findlocation("Cheongju"); 
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            findlocation("Daejeon"); 
+        }
+
+        private void weather_button4_Click(object sender, EventArgs e)
+        {
+            findlocation("Incheon");
+        }
+
+        private void weather_button5_Click(object sender, EventArgs e)
+        {
+            findlocation("Chuncheon"); 
+        }
+
+        private void weather_button6_Click(object sender, EventArgs e)
+        {
+            findlocation("Gangneung"); 
+        }
+
+        private void weather_button7_Click(object sender, EventArgs e)
+        {
+            findlocation("Ulleungdo"); 
+        }
+
+        private void weather_button13_Click(object sender, EventArgs e)
+        {
+            findlocation("Ulsan");
+        }
+
+        private void weather_button14_Click(object sender, EventArgs e)
+        {
+            findlocation("Gwangju");
+        }
+
+        private void weather_button15_Click(object sender, EventArgs e)
+        {
+            findlocation("Busan");
+        }
+
+        private void weather_button16_Click(object sender, EventArgs e)
+        {
+            findlocation("Jeju");
+        }
     }
 }

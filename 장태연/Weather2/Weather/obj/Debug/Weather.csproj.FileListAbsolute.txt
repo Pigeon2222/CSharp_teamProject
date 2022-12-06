@@ -68,3 +68,17 @@ C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\Weather2\Weather
 C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\Weather2\Weather\obj\Debug\Weather.csproj.CopyComplete
 C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\Weather2\Weather\obj\Debug\Weather.exe
 C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\Weather2\Weather\obj\Debug\Weather.pdb
+C:\Users\KB\Desktop\Weather2\Weather\bin\Debug\Weather.exe.config
+C:\Users\KB\Desktop\Weather2\Weather\bin\Debug\Weather.exe
+C:\Users\KB\Desktop\Weather2\Weather\bin\Debug\Weather.pdb
+C:\Users\KB\Desktop\Weather2\Weather\bin\Debug\Newtonsoft.Json.dll
+C:\Users\KB\Desktop\Weather2\Weather\bin\Debug\Newtonsoft.Json.xml
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.csproj.AssemblyReference.cache
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.csproj.SuggestedBindingRedirects.cache
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.Form1.resources
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.Properties.Resources.resources
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.csproj.CopyComplete
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.exe
+C:\Users\KB\Desktop\Weather2\Weather\obj\Debug\Weather.pdb
