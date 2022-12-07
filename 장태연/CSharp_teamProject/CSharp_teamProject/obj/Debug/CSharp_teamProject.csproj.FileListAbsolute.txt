@@ -10,3 +10,15 @@ D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.Cor
 D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.exe
 D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.pdb
 D:\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.LoginSuccess.resources
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.exe.config
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.exe
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\bin\Debug\CSharp_teamProject.pdb
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.AssemblyReference.cache
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.Form1.resources
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.LoginSuccess.resources
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.Properties.Resources.resources
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.exe
+C:\Users\KB\Desktop\새 폴더 (2)\CSharp_teamProject\장태연\CSharp_teamProject\CSharp_teamProject\obj\Debug\CSharp_teamProject.pdb
